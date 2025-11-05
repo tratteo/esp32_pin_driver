@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "../include/command.cpp"
+#include "../include/command.hpp"
 
 void setup()
 {

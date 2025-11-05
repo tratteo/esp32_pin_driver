@@ -1,7 +1,7 @@
 #include <Arduino.h>
-#include "../include/esp32_gpio_mapping.cpp"
-#include "../include/math.cpp"
-#include "../include/defines.cpp"
+#include "../include/esp32_gpio_mapping.hpp"
+#include "../include/defines.hpp"
+
 struct Command
 {
     String operation;
@@ -9,6 +9,22 @@ struct Command
     int pin;
     int value;
 };
+
+int clamp(int value, int min, int max)
+{
+    if (value < min)
+    {
+        return min;
+    }
+    else if (value > max)
+    {
+        return max;
+    }
+    else
+    {
+        return value;
+    }
+}
 
 String executeCommand(Command &cmd)
 {

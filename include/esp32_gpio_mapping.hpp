@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <map>
 #include <vector>
-#include "../include/defines.cpp"
+#include "../include/defines.hpp"
 enum class PinEntitlement
 {
     adc,
